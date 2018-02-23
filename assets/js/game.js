@@ -13,7 +13,11 @@
 
 /* * *  GLOBAL VARIABLES * * */
 
-var cpuGoal = Math.floor(Math.random() * 120) + 19;
+function getRandomRange(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin) + myMin);
+  }
+
+var cpuGoal = getRandomRange(19, 120);
 var cpuStore = $("#cpu").html(cpuGoal);
 
 var userScore = 0;
@@ -27,10 +31,10 @@ var lossesStore = $("#losses").html(losses);
 
 
 
-var redCrystal = $(".redCrystal").val(Math.floor(Math.random() * 12) + 1);
-var greenCrystal = $(".greenCrystal").val(Math.floor(Math.random() * 12) + 1);
-var yellowCrystal = $(".yellowCrystal").val(Math.floor(Math.random() * 12) + 1);
-var blueCrystal = $(".blueCrystal").val(Math.floor(Math.random() * 12) + 1);
+var redCrystal = $(".redCrystal").val(getRandomRange(1, 12));
+var greenCrystal = $(".greenCrystal").val(getRandomRange(1, 12));
+var yellowCrystal = $(".yellowCrystal").val(getRandomRange(1, 12));
+var blueCrystal = $(".blueCrystal").val(getRandomRange(1, 12));
 
 
 /* Start Game
