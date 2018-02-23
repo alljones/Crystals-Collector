@@ -2,16 +2,16 @@
 //LOGIC MAP
 
 /* Set VARIABLES
-    1. Variable for cpuGoal: Randomly generated
+    - 1. Variable for cpuGoal: Randomly generated
     - 2. Variable for userScore set to 0 to start
-    3. Variable for each crystal/button: Red, Yellow, Green, Blue
+    - 3. Variable for each crystal/button: Red, Yellow, Green, Blue
     - 4. Varable for  Wins set to 0 to start;
     - 5. Variable for Losses set to 0 to start;
     - 6. Variable for display areas (goal, wins, losses, totalscore)
 */
 
 
-/***  GLOBAL VARIABLES ***/
+/* * *  GLOBAL VARIABLES * * */
 
 var cpuGoal = Math.floor(Math.random() * 120) + 19;
 var cpuStore = $("#cpu").html(cpuGoal);
@@ -24,3 +24,8 @@ var winsStore = $("#wins").html(wins);
 
 var losses = 0;
 var lossesStore = $("#losses").html(losses);
+
+var redCrystal = Math.floor(Math.random() * 12) + 1;
+var greenCrystal = Math.floor(Math.random() * 12) + 1;
+var yellowCrystal = Math.floor(Math.random() * 12) + 1;
+var blueCrystal = Math.floor(Math.random() * 12) + 1;
