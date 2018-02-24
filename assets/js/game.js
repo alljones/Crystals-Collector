@@ -13,11 +13,13 @@
 
 /* * *  GLOBAL VARIABLES * * */
 
+//Set randomly generated number between a range
 function getRandomRange(myMin, myMax) {
     return Math.floor(Math.random() * (myMax - myMin) + myMin);
   }
 
-var cpuGoal = getRandomRange(19, 120);
+//Set CPU with randomly generated number between 19-120
+var cpuGoal = getRandomRange(19, 120); 
 var cpuStore = $("#cpu").html(cpuGoal);
 
 var userScore = 0;
@@ -30,18 +32,62 @@ var losses = 0;
 var lossesStore = $("#losses").html(losses);
 
 
+//Set Crystal gems with randomly generated number between 1-12
+var redCrystal = getRandomRange(1, 12);
+var greenCrystal = getRandomRange(1, 12);
+var yellowCrystal = getRandomRange(1, 12);
+var blueCrystal = getRandomRange(1, 12);
 
-var redCrystal = $(".redCrystal").val(getRandomRange(1, 12));
-var greenCrystal = $(".greenCrystal").val(getRandomRange(1, 12));
-var yellowCrystal = $(".yellowCrystal").val(getRandomRange(1, 12));
-var blueCrystal = $(".blueCrystal").val(getRandomRange(1, 12));
+// Test Wins & Losses
+function winLoss(){
+    if (userScore > cpuGoal) {
+        alert("Sorry, you lost, try again!");
+        losses++;
+        reset();
+        startGame();
+    } else if (userScore === cpuGoal) {
+        alert("Wooohooo! You WON!!!");
+        wins++;
+        reset();
+        startGame();
+}
 
+//Reset
+function reset(){
+    userScore = 0;
+    redCrystal = getRandomRange(1, 12);
+    greenCrystal = getRandomRange(1, 12);
+    yellowCrystal = getRandomRange(1, 12);
+    blueCrystal = getRandomRange(1, 12);
+
+}
 
 //Start Game
 function startGame(){
-    userScore
+
+    $(".redCrystal").on("click", function(){
+        userScore += redCrystal;
+        winLoss();
+    });
+
+    $(".greenCrystal").on("click", function(){
+        userScore += greenCrystal;
+        winLoss();
+    });
+
+    $(".yellowCrystal").on("click", function(){
+        userScore += yellowCrystal;
+        winLoss();
+    });
+
+    $(".blueCrystal").on("click", function(){
+        userScore += blueCrystal;
+        winLoss();
+    });
+
 }
-    
+
+startGame();
 
 /*1. Generate Random CPU Goal
     2. On Click of Button, it will add to the userScore total
