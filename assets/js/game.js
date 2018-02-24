@@ -37,8 +37,13 @@ var yellowCrystal = $(".yellowCrystal").val(getRandomRange(1, 12));
 var blueCrystal = $(".blueCrystal").val(getRandomRange(1, 12));
 
 
-/* Start Game
-    1. Generate Random CPU Goal
+//Start Game
+function startGame(){
+    userScore
+}
+    
+
+/*1. Generate Random CPU Goal
     2. On Click of Button, it will add to the userScore total
     3. If userScore equals cpuGoal
              - You Win
