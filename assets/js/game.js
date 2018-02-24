@@ -50,6 +50,7 @@ function winLoss(){
         wins++;
         reset();
         startGame();
+    }
 }
 
 //Reset
@@ -66,21 +67,26 @@ function reset(){
 function startGame(){
 
     $(".redCrystal").on("click", function(){
+        console.log(redCrystal);
         userScore += redCrystal;
+        totalStore;
         winLoss();
     });
 
     $(".greenCrystal").on("click", function(){
+        console.log(greenCrystal);
         userScore += greenCrystal;
         winLoss();
     });
 
     $(".yellowCrystal").on("click", function(){
+        console.log(yellowCrystal);
         userScore += yellowCrystal;
         winLoss();
     });
 
     $(".blueCrystal").on("click", function(){
+        console.log(blueCrystal);
         userScore += blueCrystal;
         winLoss();
     });
