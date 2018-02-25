@@ -23,7 +23,8 @@ var cpuGoal = getRandomRange(19, 120);
 var cpuStore = $("#cpu").html(cpuGoal);
 
 var userScore = 0;
-var totalStore = $("#total").html(userScore);
+var totalScore = $("#total");
+totalScore.text(userScore);
 
 var wins = 0;
 var winsStore = $("#wins").html(wins);
@@ -60,35 +61,32 @@ function reset(){
     greenCrystal = getRandomRange(1, 12);
     yellowCrystal = getRandomRange(1, 12);
     blueCrystal = getRandomRange(1, 12);
+}
 
+function updateScore(val){
+    console.log(val);
+    userScore += val;
+    totalScore.text(userScore);
+    winLoss();
 }
 
 //Start Game
 function startGame(){
 
-    $(".redCrystal").on("click", function(){
-        console.log(redCrystal);
-        userScore += redCrystal;
-        totalStore;
-        winLoss();
+    $(".redCrystal").on("click", function() {
+        updateScore(redCrystal);
     });
 
     $(".greenCrystal").on("click", function(){
-        console.log(greenCrystal);
-        userScore += greenCrystal;
-        winLoss();
+        updateScore(greenCrystal);
     });
 
     $(".yellowCrystal").on("click", function(){
-        console.log(yellowCrystal);
-        userScore += yellowCrystal;
-        winLoss();
+        updateScore(yellowCrystal);
     });
 
     $(".blueCrystal").on("click", function(){
-        console.log(blueCrystal);
-        userScore += blueCrystal;
-        winLoss();
+        updateScore(blueCrystal);
     });
 
 }
