@@ -1,2 +1,2 @@
 # Crystals-Collector
-HW-4: jQuery Number Guessing Game
+In this game, the player guess the computer choice by selecting from the four crystals. Each crystals has random-generated number assigned to it.
